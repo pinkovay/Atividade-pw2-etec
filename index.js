@@ -1,6 +1,8 @@
 // função que permite usar os dados do arquivo .env
 require('dotenv').config();
 
+const app = require('./config/express/expressConfig')
+
 // PORT usada para rodar o projeto
 const PORT = process.env.PORT || 3000;
 
