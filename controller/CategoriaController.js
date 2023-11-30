@@ -6,9 +6,9 @@ const router = require('../config/router/routerConfig');
 
 router.post("/cadastrarCategoria", (req, res) => {
 
-    let { nome_categoria } = req.body;
+    let { nome_categoria, observacoes_categoria } = req.body;
 
-    categoria.create({ nome_categoria })
+    categoria.create({ nome_categoria, observacoes_categoria })
         .then(() => {
             return res.status(201).json({
                 errorStatus: false,

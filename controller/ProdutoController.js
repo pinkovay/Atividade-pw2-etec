@@ -5,13 +5,16 @@ const storageAll = require('../config/firebase/firebaseStorageConfig');
 const router = require('../config/router/routerConfig');
 // produto
 const produto = require('../model/Produto')
+// atalhos
+const uploadImage = require('../helpers/uploadImagem');
+const deleteImage = require('../helpers/deleteImagem');
 
 router.get('/teste', (req, res) => {
     console.log("\nSua rota de produto está funcionando");
     res.send("Dados enviados ao console");
 });
 
-router.post('/cadastrarProduto', upload.array('files', 3), (req, res) => {
+router.post('/cadastrarProduto', uploadImage.array('files', 3), (req, res) => {
 
     const { titulo, preco, detalhes, codigo_categoria } = req.body;
     let imagem_peq_url, imagem_peq, imagem_grd_url, imagem_grd;

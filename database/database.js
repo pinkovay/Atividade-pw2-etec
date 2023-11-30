@@ -2,7 +2,7 @@
 const sequelize = require("sequelize");
 
 const connection = new sequelize(
-    "bd_atv_PW2",
+    "atv_pw2",
     "root",
     "",
     {
@@ -15,7 +15,7 @@ const connection = new sequelize(
 );
 
 if (!connection.config.logging){
-    console.log(`\x1b[43m%s\x1b[0m`, ' Aviso: O logging está desativado na configuração de conexão do projeto \n');
+    console.log(`\x1b[43m%s\x1b[0m`, ' Aviso: O logging está desativado na configuração de conexão do projeto', '\n');
 };
 
 module.exports = connection;
