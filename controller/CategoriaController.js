@@ -38,7 +38,7 @@ router.get("/listarCategoria", (req, res) => {
         }));
 });
 
-router.get("listarCategoria/:codigo_categoria", (req, res) => {
+router.get("/listarCategoria/:codigo_categoria", (req, res) => {
 
     let { codigo_categoria } = req.params;
 
