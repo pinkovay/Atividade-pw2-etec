@@ -7,8 +7,11 @@ const app = require('./config/express/expressConfig');
 const PORT = process.env.PORT || 3000;
 
 // Importando as rotas
-const testeProduto = require('./controller/ProdutoController');
-app.use('/produto', testeProduto)
+const Produto = require('./controller/ProdutoController');
+app.use('/produto', Produto)
+
+const Categoria = require('./controller/CategoriaController');
+app.use('/categoria', Categoria)
 
 app.listen(PORT, ()=>{
     console.log('\x1b[42;30m%s\x1b[0m', ` API RODANDO EM - http://localhost:${PORT} `);
