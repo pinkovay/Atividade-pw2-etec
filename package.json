@@ -21,7 +21,8 @@
     "firebase": "^10.7.0",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.6.5",
-    "sequelize": "^6.35.1"
+    "sequelize": "^6.35.1",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
