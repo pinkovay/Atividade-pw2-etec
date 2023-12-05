@@ -35,6 +35,7 @@ PORT = "${port}"
 }
 
 function createEnv() {
+    console.log('\x1b[41;30m%s\x1b[0m',"\nEnter your keys...\nYou can enter all your keys at once")
     const apiKey = getUserInformation('Enter your Firebase API Key: ');
     const authDomain = getUserInformation('Enter your Firebase Auth Domain: ');
     const projectId = getUserInformation('Enter your Firebase Project ID: ');
@@ -57,7 +58,7 @@ function createEnv() {
 
 // Verificar se o arquivo .env já existe
 if (fs.existsSync(envFile)) {
-    const answer = getUserInformation('The .env file already exists. Do you want to overwrite it? (y/n): ');
+    const answer = getUserInformation('The .env file already exists. Do you want to overwrite it? (Y/n): ');
     if (answer === 'y' || answer === 'Y' || answer === '') {
         createEnv();
     } else {
