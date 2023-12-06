@@ -1,19 +1,22 @@
-// Importando multer / middleware
-const multer = require('multer');
+const multer = require("multer");
 
-// filtro para limitação de tipo de arquivo
+// ==================== CONFIGURAÇÕES DO MULTER ==================== \\
+// TIPOS DE ARQUIVOS PERMITIDOS
 const fileFilter = (req, file, cb) => {
-  const isImage = file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/gif';
-  cb(null, isImage);
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+        cb(null, true)
+    } else {
+        cb(null, false)
+    }
 };
 
-// Definindo o uso do multer
-const uploadImage = multer({
-  storage: multer.memoryStorage,
-  limits: {
-    fileSize: 5 * 1024 * 1024
-  },
-  fileFilter: fileFilter
+// DEFINIÇÃO DE USO DO MULTER
+const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+        fileSize: 5 * 1024 * 1024
+    },
+    fileFilter: fileFilter,
 });
 
-module.exports = uploadImage;
+module.exports = upload;

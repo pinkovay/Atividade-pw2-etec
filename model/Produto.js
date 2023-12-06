@@ -22,8 +22,20 @@ const Produto = connection.define(
             type: sequelize.DECIMAL(10, 2),
             allowNull: false
         },
-        imagem_produto: {
-            type: sequelize.STRING(500),
+        imagem_peq:{
+            type: sequelize.STRING,
+            allowNull: false
+        },
+        imagem_peq_url:{
+            type: sequelize.STRING,
+            allowNull: false
+        },
+        imagem_grd:{
+            type: sequelize.STRING,
+            allowNull: false
+        },
+        imagem_grd_url:{
+            type: sequelize.STRING,
             allowNull: false
         },
         descricao_produto: {

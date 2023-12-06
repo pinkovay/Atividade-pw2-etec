@@ -80,28 +80,29 @@ router.put('/alterarCategoria', (req, res) => {
             });
 });
 
-router.delete('excluirCategoria/:codigo_categoria', (req, res)=>{
-
-    let{codigo_categoria} = req.params;
+router.delete('/excluirCategoria/:codigo_categoria', (req, res)=>{
+    let {codigo_categoria} = req.params;
 
     categoria.destroy(
         {where:{codigo_categoria}}
     )
     .then(
         ()=>{
-            return res.status(200).json({
-                errorStatus:false,
-                messageStatus: "Categoria excluída com sucesso!"
-            })
-        })
+            return res.status(200).json(
+                {
+                    errorStatus: false,
+                    messageStatus: "Categoria excluída com sucesso!"
+                }
+            )
+        }
+    )
     .catch(
-        (error)=>{
+        (error) => {
             return res.status(500).json({
-                errorStatus:true,
+                errorStatus: true,
                 messageStatus: error
             });
         });
-
 });
 
 module.exports = router;
